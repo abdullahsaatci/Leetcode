@@ -1,6 +1,27 @@
 class MyHashSet {
 public:
-    int* set = nullptr;
+    bool* set;
+
+    MyHashSet() {
+        set = new bool[10e6]();
+    }
+    
+    void add(int key) {
+        set[key] = true;
+    }
+    
+    void remove(int key) {
+        set[key] = false;
+    }
+    
+    bool contains(int key) {
+        return set[key];
+    }
+};
+
+
+/*
+ int* set = nullptr;
     int size = 0;
     MyHashSet() {
     }
@@ -40,9 +61,7 @@ public:
             }
         }
         return false;
-    }
-};
-
+*/
 /**
  * Your MyHashSet object will be instantiated and called as such:
  * MyHashSet* obj = new MyHashSet();
