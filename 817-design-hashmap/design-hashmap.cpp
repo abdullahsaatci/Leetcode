@@ -1,9 +1,10 @@
 class MyHashMap {
 public:
-    vector<int> map;
+    int* map;
     MyHashMap() {
-        for (int i = 0; i < 10e6+1; i++){
-            map.push_back(-1);
+        map = new int[1e6+1];
+        for (int i = 0; i < 1e6+1; i++){
+            map[i] = -1;
         }
     }
     
